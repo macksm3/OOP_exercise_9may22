@@ -48,7 +48,7 @@ class Bird(Pet):
 # class definition of 'Gecko' starts here
 class Gecko(Pet):
     # class attribute
-    at1 = "reptil"
+    at1 = "reptile"
 
     def __init__(self, name):
         super().__init__(name)
