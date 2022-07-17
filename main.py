@@ -1,5 +1,5 @@
 # Homework for the week of May 9th, 2022
-# Experimenting with Object Oriented Programming (OOP)
+# Experimenting with Object-Oriented Programming (OOP)
 # by Michael Macks McCosh (MacksM3)
 
 from pets import *
@@ -16,8 +16,8 @@ def click(event):
     for index in range(len(petType)):
         radiobutton = Radiobutton(petSelectFrame,
                                   text=petType[index],  # adds text to radio buttons
-                                  variable=f,  # groups radiobuttons together if they share the same variable
-                                  value=index,  # assigns each radiobuton a different value
+                                  variable=f,  # groups radio buttons together if they share the same variable
+                                  value=index,  # assigns each radio button a different value
                                   # padx=10,
                                   font=("Impact", 15),
                                   image=petImages[index],  # adds image to radio button
@@ -31,23 +31,24 @@ def click(event):
 
 def select_pet():
     petSelectFrame.destroy()
-    if(f.get()==0):
+    if f.get() == 0:
         newCat = Cat(newName.get())
         print(newCat.speak())
         newPetOutput.config(text=newCat.speak())
         newPetPicture.config(image=catImage)
-    elif (f.get() == 1):
+    elif f.get() == 1:
         newParrot = Bird(newName.get())
         print(newParrot.speak())
         newPetOutput.config(text=newParrot.speak())
         newPetPicture.config(image=parrotImage)
-    elif(f.get()==2):
+    elif f.get() == 2:
         newGecko = Gecko(newName.get())
         print(newGecko.speak())
         newPetOutput.config(text=newGecko.speak())
         newPetPicture.config(image=geckoImage)
 
     quit_button.grid(row=4, column=0, columnspan=2, sticky=S)
+
 
 # GUI code starts here
 window = Tk()
@@ -77,7 +78,7 @@ catImage = PhotoImage(file='icons8-kitty-96.png')
 parrotImage = PhotoImage(file='icons8-parrot-96.png')
 geckoImage = PhotoImage(file='icons8-lizard-96.png')
 
-newPetPicture = Label(window,)
+newPetPicture = Label(window, )
 newPetPicture.grid(row=2, column=0)
 
 newPetOutput = Label(window)
@@ -92,7 +93,7 @@ f = IntVar()
 
 petSelectFrame = Frame(window, relief="raised", bd=3)
 petSelectFrame.grid(row=2, column=1, pady=30)
-radiobutton = Radiobutton(petSelectFrame,)
+radiobutton = Radiobutton(petSelectFrame, )
 # radiobutton.pack()
 
 '''
@@ -120,11 +121,8 @@ elif i == "C":
     print(newCat.speak())
 '''
 
-
 quit_button = Button(window, text="Exit Program", width=15, command=window.quit)
 
-
 window.mainloop()
-
 
 # end of program
